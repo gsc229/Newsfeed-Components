@@ -1,7 +1,8 @@
 .articles {
   margin-top: 95px;
-  border: 2px solid blue;
+  //border: 2px solid blue;
 }
+
 .article {
   margin: 20px 10%;
   padding: 0 20px 25px;
@@ -24,11 +25,11 @@
     font-size: 14px;
   }
 
-  .close {
+  /* .close {
     position: absolute;
     top: 10px;
     right: 10px;
-  }
+  } */
 
   .expandButton {
     position: absolute;
@@ -57,6 +58,7 @@
     cursor: pointer;
   }
 }
+
 @keyframes stretch {
   0% {
     transform: scale(0.3);
@@ -71,6 +73,7 @@
     background-color: #388e3c;
   }
 }
+
 .article-open {
   margin: 300px auto;
   height: 400px;
@@ -78,10 +81,36 @@
   color: whitesmoke;
   animation-name: stretch;
   animation-duration: 0.4s;
-  animation-timing-function: ease-out;
+  animation-timing-function: cubic-bezier(0.5, 0.2, 0.3, 1);
   animation-delay: 0s;
-  animation-direction: alternate;
+  animation-direction: normal;
   animation-iteration-count: 1;
-  animation-fill-mode: forwards;
+  animation-fill-mode: both;
+  animation-play-state: running;
+}
+
+@keyframes shrink {
+  0% {
+    transform: scale(0.3);
+    background-color: red;
+    border-radius: 100%;
+  }
+  50% {
+    background-color: #388e3c;
+  }
+  100% {
+    transform: scale(1);
+    background-color: #388e3c;
+  }
+}
+
+.article-close {
+  animation-name: shrink;
+  animation-duration: 0.4s;
+  animation-timing-function: cubic-bezier(0.5, 0.2, 0.3, 1);
+  animation-delay: 0s;
+  animation-direction: normal;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
   animation-play-state: running;
 }

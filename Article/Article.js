@@ -172,12 +172,14 @@ function articleCreator(obj) {
   expandButton.textContent = "READ";
   closeX.textContent = "X";
   expandButton.addEventListener("click", e => {
-    article.classList.toggle("article-open");
+    article.classList.remove("article-close");
+    article.classList.add("article-open");
     expandButton.style.display = "none";
     closeX.style.display = "block";
   });
   closeX.addEventListener("click", e => {
     article.classList.remove("article-open");
+    article.classList.add("article-close");
     expandButton.style.display = "block";
     closeX.style.display = "none";
   });
