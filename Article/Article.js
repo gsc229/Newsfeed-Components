@@ -97,6 +97,18 @@ const data = [
 
     thirdParagraph: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima corrupti, consequuntur hic saepe officia molestiae a provident. Accusantium, atque. Possimus odio quod animi est repellat accusamus dolores sint optio ut!
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet distinctio repudiandae vel laudantium ratione enim corrupti odio necessitatibus, molestiae iure itaque ad quam minima quod pariatur, eveniet quibusdam repellat unde!`
+  },
+  {
+    title: "News Flash: Greg added animations and a close X to the articles",
+    date: "Sept 4th, 2019",
+    firstParagraph: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima corrupti, consequuntur hic saepe officia molestiae a provident. Accusantium, atque. Possimus odio quod animi est repellat accusamus dolores sint optio ut!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet distinctio repudiandae vel laudantium ratione enim corrupti odio necessitatibus, molestiae iure itaque ad quam minima quod pariatur, eveniet quibusdam repellat unde! `,
+
+    secondParagraph: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima corrupti, consequuntur hic saepe officia molestiae a provident. Accusantium, atque. Possimus odio quod animi est repellat accusamus dolores sint optio ut!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet distinctio repudiandae vel laudantium ratione enim corrupti odio necessitatibus, molestiae iure itaque ad quam minima quod pariatur, eveniet quibusdam repellat unde! `,
+
+    thirdParagraph: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima corrupti, consequuntur hic saepe officia molestiae a provident. Accusantium, atque. Possimus odio quod animi est repellat accusamus dolores sint optio ut!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet distinctio repudiandae vel laudantium ratione enim corrupti odio necessitatibus, molestiae iure itaque ad quam minima quod pariatur, eveniet quibusdam repellat unde!`
   }
 ];
 
@@ -108,6 +120,7 @@ const data = [
     {three separate paragraph elements}
 
     <span class='expandButton'></span>
+    <span class='close'></span>
   </div>
 
   Hint: You will need to use createElement more than once here!
@@ -133,6 +146,7 @@ function articleCreator(obj) {
   const secondParagraph = document.createElement("p");
   const thirdParagraph = document.createElement("p");
   const expandButton = document.createElement("span");
+  const closeX = document.createElement("span");
 
   // append everything to the div parent
   article.appendChild(title);
@@ -141,11 +155,13 @@ function articleCreator(obj) {
   article.appendChild(secondParagraph);
   article.appendChild(thirdParagraph);
   article.appendChild(expandButton);
+  article.appendChild(closeX);
 
   // add class names
   article.classList.add("article");
   date.classList.add("date");
   expandButton.classList.add("expandButton");
+  closeX.classList.add("close");
   //fill the elemnts with content:
   title.textContent = obj.title;
   date.textContent = obj.date;
@@ -154,10 +170,18 @@ function articleCreator(obj) {
   thirdParagraph.textContent = obj.thirdParagraph;
   // add toggleClass 'article-open'
   expandButton.textContent = "READ";
+  closeX.textContent = "X";
   expandButton.addEventListener("click", e => {
     article.classList.toggle("article-open");
+    expandButton.style.display = "none";
+    closeX.style.display = "block";
   });
-  console.log(article);
+  closeX.addEventListener("click", e => {
+    article.classList.remove("article-open");
+    expandButton.style.display = "block";
+    closeX.style.display = "none";
+  });
+
   // return the article:
   return article;
 }

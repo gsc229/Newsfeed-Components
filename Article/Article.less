@@ -1,5 +1,6 @@
 .articles {
   margin-top: 95px;
+  border: 2px solid blue;
 }
 .article {
   margin: 20px 10%;
@@ -31,8 +32,8 @@
 
   .expandButton {
     position: absolute;
-    bottom: 0;
-    left: 50%;
+    bottom: 18px;
+    left: 90%;
     font-size: 20px;
     color: whitesmoke;
     cursor: pointer;
@@ -43,6 +44,17 @@
     background: black;
     border-radius: 20%;
     text-align: center;
+  }
+
+  .close {
+    position: absolute;
+    top: 10px;
+    left: 95%;
+    font-size: 30px;
+    color: whitesmoke;
+    font-weight: bolder;
+    display: none;
+    cursor: pointer;
   }
 }
 @keyframes stretch {
@@ -60,6 +72,16 @@
   }
 }
 .article-open {
+  margin: 300px auto;
   height: 400px;
-  animation: stretch 0.4s ease-out 0s normal 1 none running;
+  width: 50%;
+  color: whitesmoke;
+  animation-name: stretch;
+  animation-duration: 0.4s;
+  animation-timing-function: ease-out;
+  animation-delay: 0s;
+  animation-direction: alternate;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
 }
