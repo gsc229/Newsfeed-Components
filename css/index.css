@@ -43,7 +43,8 @@
   padding: 0 20px 25px;
   border: 1px solid lightgrey;
   border-radius: 10px;
-  background-color: white;
+  background-color: #388e3c;
+  color: darkslategray;
   position: relative;
   height: 50px;
   overflow: hidden;
@@ -71,7 +72,7 @@
   color: whitesmoke;
   cursor: pointer;
   transform: translate(-50%);
-  border: 2px solid black;
+  border: 2px solid whitesmoke;
   padding: 5px;
   background: black;
   border-radius: 20%;
@@ -79,10 +80,12 @@
 }
 .article .close {
   position: absolute;
+  padding: 5px;
   top: 10px;
   left: 95%;
   font-size: 30px;
-  color: whitesmoke;
+  color: forestgreen;
+  border: 0.5px solid forestgreen;
   font-weight: bolder;
   display: none;
   cursor: pointer;
@@ -98,14 +101,14 @@
   }
   100% {
     transform: scale(1.5);
-    background-color: #388e3c;
+    background-color: gainsboro;
   }
 }
 .article-open {
   margin: 300px auto;
   height: 400px;
   width: 50%;
-  color: whitesmoke;
+  color: seagreen;
   animation-name: stretch;
   animation-duration: 0.4s;
   animation-timing-function: cubic-bezier(0.5, 0.2, 0.3, 1);
@@ -126,7 +129,7 @@
   }
   100% {
     transform: scale(1);
-    background-color: #388e3c;
+    background-color: gainsboro;
   }
 }
 .article-close {
